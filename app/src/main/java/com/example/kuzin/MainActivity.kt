@@ -4,15 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.kuzin.ui.theme.KuzinTheme
+import com.example.kuzin.data.model.Product
+import com.example.kuzin.ui.theme.viewModel.ProductViewModel
+import com.example.kuzin.ui.theme.viewModel.RecipeViewModel
 import com.example.kuzin.ui.theme.viewModel.RetrofitViewModel
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +15,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val retrofitViewModel: RetrofitViewModel = viewModel()
-            retrofitViewModel.fetchQuotas()
+           val retrofitViewModel: RetrofitViewModel = viewModel()
+           retrofitViewModel.fetchQuotas()
+
+
+            val productViewModel: ProductViewModel = viewModel()
+            val product = Product(
+                title = "Офисное кресло Comfort-Т",
+                price = 14200.0,
+                stock = 3,
+                category = "Мебель"
+            )
+            productViewModel.createProduct(product)
+
+            val recipeViewModel: RecipeViewModel = viewModel()
+            recipeViewModel.updateRecipe()
         }
     }
 }

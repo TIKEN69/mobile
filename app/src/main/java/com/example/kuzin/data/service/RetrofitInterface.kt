@@ -1,7 +1,6 @@
-package com.example.kuzin.data
+package com.example.kuzin.data.service
 
-import com.example.kuzin.model.Quote
-import com.example.kuzin.model.ResponseQuote
+import com.example.kuzin.data.model.ResponseQuote
 import retrofit2.http.GET
 
 interface RetrofitInterface {

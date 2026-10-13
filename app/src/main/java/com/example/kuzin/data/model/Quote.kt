@@ -1,4 +1,4 @@
-package com.example.kuzin.model
+package com.example.kuzin.data.model
 
 data class Quote(
     val id: Int,
