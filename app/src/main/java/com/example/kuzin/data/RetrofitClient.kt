@@ -3,6 +3,7 @@ package com.example.kuzin.data
 import com.example.kuzin.data.service.ProductInterface
 import com.example.kuzin.data.service.RecipeInterface
 import com.example.kuzin.data.service.RetrofitInterface
+import com.example.kuzin.data.service.UserInterface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,4 +31,6 @@ object RetrofitClient {
     val productAPI = retrofit.create(ProductInterface::class.java)
 
     val recipeAPI = retrofit.create(RecipeInterface::class.java)
+
+    val userAPI = retrofit.create(UserInterface::class.java)
 }
